@@ -21,7 +21,7 @@ my %module_build_args = (
     'Steven Haryanto <stevenharyanto@gmail.com>'
   ],
   'dist_name' => 'Data-Format-Pretty-HTML',
-  'dist_version' => '0.01',
+  'dist_version' => '0.02',
   'license' => 'perl',
   'module_name' => 'Data::Format::Pretty::HTML',
   'recommends' => {},
@@ -33,6 +33,7 @@ my %module_build_args = (
     'HTML::Entities' => '0',
     'Log::Any' => '0',
     'Scalar::Util' => '0',
+    'Text::ASCIITable' => '0',
     'URI::Find' => '0',
     'URI::Find::Schemeless' => '0',
     'YAML::Any' => '0',

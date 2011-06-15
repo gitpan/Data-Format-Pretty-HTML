@@ -24,6 +24,7 @@ requires:
   HTML::Entities: 0
   Log::Any: 0
   Scalar::Util: 0
+  Text::ASCIITable: 0
   URI::Find: 0
   URI::Find::Schemeless: 0
   YAML::Any: 0
@@ -31,4 +32,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Data-Format-Pretty-HTML/
   repository: http://github.com/sharyanto/perl-Data-Format-Pretty-HTML
-version: 0.01
+version: 0.02
