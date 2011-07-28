@@ -21,14 +21,14 @@ my %module_build_args = (
     'Steven Haryanto <stevenharyanto@gmail.com>'
   ],
   'dist_name' => 'Data-Format-Pretty-HTML',
-  'dist_version' => '0.02',
+  'dist_version' => '0.03',
   'license' => 'perl',
   'module_name' => 'Data::Format::Pretty::HTML',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {
     'Data::Dump::Partial' => '0',
-    'Data::Format::Pretty::Console' => '0.09',
+    'Data::Format::Pretty::Console' => '0.10',
     'Exporter' => '0',
     'HTML::Entities' => '0',
     'Log::Any' => '0',

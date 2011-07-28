@@ -1,10 +1,4 @@
 package Data::Format::Pretty::HTML;
-BEGIN {
-  $Data::Format::Pretty::HTML::VERSION = '0.02';
-}
-# ABSTRACT: Pretty-print data structure for HTML output
-
-
 use 5.010;
 use strict;
 use warnings;
@@ -21,13 +15,13 @@ require Exporter;
 our @ISA = qw(Exporter Data::Format::Pretty::Console);
 our @EXPORT_OK = qw(format_pretty);
 
+our $VERSION = '0.03'; # VERSION
 
 sub format_pretty {
     my ($data, $opts) = @_;
     $opts //= {};
     __PACKAGE__->new($opts)->_format($data);
 }
-
 
 # OO interface is hidden
 sub new {
@@ -64,15 +58,18 @@ sub _render_table {
     my ($self, $t) = @_;
     my @t = ("<table>\n");
 
-    push @t, "  <tr>";
-    for my $c (@{$t->{tbl_cols}}) {
-        push @t, (
-            "<th", (looks_like_number($c) ? ' class="number"':''), ">",
-            $self->_htmlify($c),
-            "</th>",
-        );
+    unless ($t->{options}{hide_HeadRow}) {
+        push @t, "  <tr>";
+        for my $c (@{$t->{tbl_cols}}) {
+            push @t, (
+                "<th", (looks_like_number($c) ? ' class="number"':''), ">",
+                $self->_htmlify($c),
+                "</th>",
+            );
+        }
+        push @t, "</tr>\n";
     }
-    push @t, "</tr>\n";
+
     for my $r (@{$t->{tbl_rows}}) {
         push @t, "  <tr>";
         my $cidx = 0;
@@ -120,10 +117,10 @@ sub _format_hot {
     $self->_render_table($t);
 }
 
-
 1;
+# ABSTRACT: Pretty-print data structure for HTML output
 
-__END__
+
 =pod
 
 =head1 NAME
@@ -132,7 +129,7 @@ Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -239,13 +236,13 @@ Differences with Data::Format::Pretty::Console:
 
 =over 4
 
-=item *
-
-=item *
+=item * hot (hash of table) structure is rendered as table of inner tables
 
 =back
 
 This module uses L<Log::Any> for logging.
+
+=for Pod::Coverage new
 
 =head1 FUNCTIONS
 
@@ -266,8 +263,6 @@ href="http://foo">http://foo</a>'. Default is true.
 
 =back
 
-=for Pod::Coverage new
-
 =head1 SEE ALSO
 
 L<Data::Format::Pretty::Console>
@@ -284,4 +279,8 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
+
+__END__
+
 

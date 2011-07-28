@@ -2,7 +2,7 @@ NAME
     Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
     In your program:
@@ -107,8 +107,7 @@ DESCRIPTION
 
     Differences with Data::Format::Pretty::Console:
 
-    *
-    *
+    *   hot (hash of table) structure is rendered as table of inner tables
 
     This module uses Log::Any for logging.
 
