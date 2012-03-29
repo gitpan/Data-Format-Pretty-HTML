@@ -15,7 +15,9 @@ require Exporter;
 our @ISA = qw(Exporter Data::Format::Pretty::Console);
 our @EXPORT_OK = qw(format_pretty);
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
+
+sub content_type { "text/html" }
 
 sub format_pretty {
     my ($data, $opts) = @_;
@@ -129,7 +131,7 @@ Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -265,7 +267,7 @@ href="http://foo">http://foo</a>'. Default is true.
 
 =head1 SEE ALSO
 
-L<Data::Format::Pretty::Console>
+L<Data::Format::Pretty>
 
 =head1 AUTHOR
 
@@ -273,7 +275,7 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Steven Haryanto.
+This software is copyright (c) 2012 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
