@@ -15,7 +15,7 @@ require Exporter;
 our @ISA = qw(Exporter Data::Format::Pretty::Console);
 our @EXPORT_OK = qw(format_pretty);
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 sub content_type { "text/html" }
 
@@ -131,7 +131,7 @@ Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

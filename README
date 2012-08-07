@@ -2,7 +2,7 @@ NAME
     Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 VERSION
-    version 0.04
+    version 0.05
 
 SYNOPSIS
     In your program:

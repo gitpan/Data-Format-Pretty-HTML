@@ -3,11 +3,7 @@ abstract: 'Pretty-print data structure for HTML output'
 author:
   - 'Steven Haryanto <stevenharyanto@gmail.com>'
 build_requires:
-  Data::Dump::Partial: 0
-  File::Find: 0
-  File::Temp: 0
   Module::Build: 0.3601
-  Test::More: 0
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -18,20 +14,12 @@ meta-spec:
   version: 1.4
 name: Data-Format-Pretty-HTML
 requires:
-  Data::Dump::Partial: 0
   Data::Format::Pretty::Console: 0.10
-  Exporter: 0
   HTML::Entities: 0
-  Log::Any: 0
-  Scalar::Util: 0
   Text::ASCIITable: 0
   URI::Find: 0
-  URI::Find::Schemeless: 0
-  YAML::Any: 0
   perl: 5.010000
-  strict: 0
-  warnings: 0
 resources:
   homepage: http://search.cpan.org/dist/Data-Format-Pretty-HTML/
   repository: http://github.com/sharyanto/perl-Data-Format-Pretty-HTML
-version: 0.04
+version: 0.05
