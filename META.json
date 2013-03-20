@@ -4,7 +4,7 @@
       "Steven Haryanto <stevenharyanto@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
+   "generated_by" : "Dist::Zilla version 4.300015, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -24,13 +24,20 @@
             "Module::Build" : "0.3601"
          }
       },
+      "develop" : {
+         "requires" : {
+            "Test::Rinci" : "0.01"
+         }
+      },
       "runtime" : {
          "requires" : {
-            "Data::Format::Pretty::Console" : "0.10",
-            "HTML::Entities" : 0,
-            "Text::ASCIITable" : 0,
-            "URI::Find" : 0,
-            "perl" : "5.010000"
+            "Data::Dump::Partial" : "0",
+            "Data::Format::Pretty::Console" : "0.21",
+            "HTML::Entities" : "0",
+            "Log::Any" : "0",
+            "URI::Find::Schemeless" : "0",
+            "YAML::Any" : "0",
+            "perl" : "5.010001"
          }
       }
    },
@@ -41,6 +48,6 @@
          "url" : "http://github.com/sharyanto/perl-Data-Format-Pretty-HTML"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
 

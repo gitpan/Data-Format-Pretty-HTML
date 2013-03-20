@@ -17,17 +17,19 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Data-Format-Pretty-HTML",
-  "dist_version" => "0.05",
+  "dist_version" => "0.06",
   "license" => "perl",
   "module_name" => "Data::Format::Pretty::HTML",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Data::Format::Pretty::Console" => "0.10",
+    "Data::Dump::Partial" => 0,
+    "Data::Format::Pretty::Console" => "0.21",
     "HTML::Entities" => 0,
-    "Text::ASCIITable" => 0,
-    "URI::Find" => 0,
-    "perl" => "5.010000"
+    "Log::Any" => 0,
+    "URI::Find::Schemeless" => 0,
+    "YAML::Any" => 0,
+    "perl" => "5.010001"
   },
   "script_files" => []
 );
