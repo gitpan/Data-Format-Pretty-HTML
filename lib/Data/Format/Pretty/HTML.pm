@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Log::Any '$log';
 
-use Data::Format::Pretty::Console 0.21;
+use Data::Format::Pretty::Console 0.24;
 use HTML::Entities;
 use Scalar::Util qw(looks_like_number);
 use URI::Find::Schemeless;
@@ -15,7 +15,7 @@ require Exporter;
 our @ISA = qw(Exporter Data::Format::Pretty::Console);
 our @EXPORT_OK = qw(format_pretty);
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 sub content_type { "text/html" }
 
@@ -60,7 +60,8 @@ sub _render_table {
     my ($self, $t) = @_;
     my @t = ("<table>\n");
 
-    unless ($t->{at_opts}{hide_HeadRow}) {
+    my $sh = $t->{at_opts}{show_header};
+    unless (defined($sh) && !$sh) {
         push @t, "  <tr>";
         for my $c (@{$t->{cols}}) {
             push @t, (
@@ -129,7 +130,7 @@ Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

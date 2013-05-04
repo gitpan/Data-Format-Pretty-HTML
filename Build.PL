@@ -7,7 +7,8 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.3601",
+    "Test::More" => "0.98"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
@@ -17,14 +18,14 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Data-Format-Pretty-HTML",
-  "dist_version" => "0.06",
+  "dist_version" => "0.07",
   "license" => "perl",
   "module_name" => "Data::Format::Pretty::HTML",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Data::Dump::Partial" => 0,
-    "Data::Format::Pretty::Console" => "0.21",
+    "Data::Format::Pretty::Console" => "0.24",
     "HTML::Entities" => 0,
     "Log::Any" => 0,
     "URI::Find::Schemeless" => 0,
