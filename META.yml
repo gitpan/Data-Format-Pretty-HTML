@@ -25,4 +25,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Data-Format-Pretty-HTML/
   repository: http://github.com/sharyanto/perl-Data-Format-Pretty-HTML
-version: 0.07
+version: 0.08

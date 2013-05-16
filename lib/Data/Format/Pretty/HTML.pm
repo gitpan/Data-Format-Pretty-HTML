@@ -15,7 +15,7 @@ require Exporter;
 our @ISA = qw(Exporter Data::Format::Pretty::Console);
 our @EXPORT_OK = qw(format_pretty);
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub content_type { "text/html" }
 
@@ -32,6 +32,7 @@ sub new {
     #my $obj = Data::Format::Pretty::Console->new($opts);
     $obj->{opts}{linkify_urls_in_text} //= 1;
     $obj->{opts}{interactive} = 1;
+    $obj->{opts}{list_max_columns} = 1;
     #bless $class, $obj;
     $obj;
 }
@@ -130,7 +131,7 @@ Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
