@@ -15,7 +15,7 @@ require Exporter;
 our @ISA = qw(Exporter Data::Format::Pretty::Console);
 our @EXPORT_OK = qw(format_pretty);
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 sub content_type { "text/html" }
 
@@ -63,7 +63,8 @@ sub _render_table {
 
     my $sh = $t->{at_opts}{show_header};
     unless (defined($sh) && !$sh) {
-        push @t, "  <tr>";
+        push @t, "  <thead>\n";
+        push @t, "    <tr>";
         for my $c (@{$t->{cols}}) {
             push @t, (
                 "<th", (looks_like_number($c) ? ' class="number"':''), ">",
@@ -72,10 +73,12 @@ sub _render_table {
             );
         }
         push @t, "</tr>\n";
+        push @t, "  </thead>\n";
     }
 
+    push @t, "  <tbody>\n";
     for my $r (@{$t->{rows}}) {
-        push @t, "  <tr>";
+        push @t, "    <tr>";
         my $cidx = 0;
         for my $c (@$r) {
             if ($t->{html_cols} && $t->{html_cols}[$cidx]) {
@@ -91,6 +94,7 @@ sub _render_table {
         }
         push @t, "</tr>\n";
     }
+    push @t, "  </tbody>\n";
     push @t, "</table>\n";
     join "", @t;
 }
@@ -122,8 +126,11 @@ sub _format_hot {
 1;
 # ABSTRACT: Pretty-print data structure for HTML output
 
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -131,7 +138,7 @@ Data::Format::Pretty::HTML - Pretty-print data structure for HTML output
 
 =head1 VERSION
 
-version 0.08
+This document describes version 0.09 of Data::Format::Pretty::HTML (from Perl distribution Data-Format-Pretty-HTML), released on 2014-07-24.
 
 =head1 SYNOPSIS
 
@@ -269,20 +276,31 @@ href="http://foo">http://foo</a>'. Default is true.
 
 L<Data::Format::Pretty>
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Data-Format-Pretty-HTML>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/sharyanto/perl-Data-Format-Pretty-HTML>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=Data-Format-Pretty-HTML>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
 Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Steven Haryanto.
+This software is copyright (c) 2014 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-
-
